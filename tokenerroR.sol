@@ -1,3 +1,7 @@
+
+// SPDX-License-Identifier: MIT
+
+
 pragma solidity ^0.8.0;
 abstract contract Implementation{
 function name() public virtual view returns (string memory);
@@ -84,7 +88,7 @@ function transferFrom(address _from,  uint256 _value) public override   returns 
 }
 function approve(address _spender, uint256 _value) public  override returns (bool ){
            require(balances[msg.sender] >=_value, "Inusuffiecnet balance ");
-         approval[msg.sender][_spender];
+         approval[msg.sender][_spender]=_value;
          emit Transfer(msg.sender,_spender,_value);
          return true;
          
