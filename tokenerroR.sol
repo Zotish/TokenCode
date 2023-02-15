@@ -10,7 +10,7 @@ function decimals() public virtual view returns (uint8);
 function totalSupply() public virtual view returns (uint256);
 function balanceOf(address _owner) public virtual view returns (uint256 );
 function transfer(address _to, uint256 _value) public virtual returns (bool );
-function transferFrom(address _from,  uint256 _value) public virtual returns (bool );
+function transferFrom(address _from, address _to, uint256 _value) public override returns (bool );
 function approve(address _spender, uint256 _value) public  virtual returns (bool );
 function allowance(address _owner, address _spender) public  virtual view returns (uint256 );
 event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -80,7 +80,7 @@ function transfer(address _to, uint256 _value) public override  returns (bool ){
         emit Transfer(msg.sender,_to,_value);
         return true;
 }
-function transferFrom(address _from,  uint256 _value) public override   returns (bool ){
+function transferFrom(address _from, address _to, uint256 _value) public override returns (bool ){
            uint256 allowbal =approval[_from][msg.sender]=_value;
            require(allowbal>=_value,"insu");
            return true;
