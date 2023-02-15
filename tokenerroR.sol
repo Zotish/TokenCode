@@ -89,7 +89,7 @@ function transferFrom(address _from, address _to, uint256 _value) public overrid
 function approve(address _spender, uint256 _value) public  override returns (bool ){
            require(balances[msg.sender] >=_value, "Inusuffiecnet balance ");
          approval[msg.sender][_spender]=_value;
-         emit Transfer(msg.sender,_spender,_value);
+         emit Approval(msg.sender,_spender,_value);
          return true;
          
 }
