@@ -26,7 +26,7 @@ contract ownerstatus{
       owner ==msg.sender;
                 }
      
-     function ownership_chnage(address _to) public { 
+     function ownership_change(address _to) public { 
          require(msg.sender==owner,"You are not the owner ");
          newowner=_to;
         }
